@@ -1,0 +1,1042 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Perkenalan Pamong 8!</title>
+
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;700&family=Poppins:wght@400;600&display=swap"
+        rel="stylesheet">
+
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: #F0F4F8;
+            overflow-x: hidden;
+        }
+
+        .font-fredoka {
+            font-family: 'Fredoka', sans-serif;
+        }
+
+        .hero-bg {
+            background: linear-gradient(135deg, #FFD3B6, #FFAAA5, #FF8C94);
+        }
+
+        .card {
+            border-radius: 2rem;
+            box-shadow: 0 25px 50px -12px rgb(0 0 0 / 0.15);
+            padding: 2.5rem;
+            border: 4px solid #2d3748;
+            position: relative;
+            z-index: 10;
+            background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23FBBF24' fill-opacity='0.1'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E"), linear-gradient(145deg, #fffbeb 0%, #fef3c7 100%);
+        }
+
+        .photo-frame {
+            border: 6px solid white;
+            box-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
+            transition: transform 0.3s ease-in-out;
+            position: relative;
+            z-index: 5;
+        }
+
+        .photo-frame:hover {
+            transform: scale(1.05) rotate(3deg);
+        }
+
+        @keyframes float {
+            0% {
+                transform: translateY(0px) rotate(var(--start-rotate));
+            }
+
+            50% {
+                transform: translateY(-20px) rotate(var(--end-rotate));
+            }
+
+            100% {
+                transform: translateY(0px) rotate(var(--start-rotate));
+            }
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes scaleIn {
+            from {
+                opacity: 0;
+                transform: scale(0.5);
+            }
+
+            to {
+                opacity: 1;
+                transform: scale(1);
+            }
+        }
+
+        .animate-float {
+            animation: float 6s ease-in-out infinite;
+        }
+
+        .animate-fade-in-up {
+            animation: fadeInUp 1s ease-out forwards;
+        }
+
+        .animate-scale-in {
+            animation: scaleIn 0.8s cubic-bezier(0.34, 1.56, 0.64, 1) forwards;
+        }
+
+        .main-bg-gradient {
+            background: linear-gradient(170deg, #fff1f2 0%, #eef2ff 100%);
+        }
+
+        .deco-blob {
+            position: absolute;
+            opacity: 0.2;
+            filter: blur(40px);
+            z-index: 1;
+        }
+
+        .hero-photo {
+            position: absolute;
+        }
+
+        .p1 {
+            top: 10%;
+            left: 5%;
+        }
+
+        .p2 {
+            top: 20%;
+            right: 5%;
+        }
+
+        .p3 {
+            bottom: 15%;
+            left: 10%;
+        }
+
+        .p4 {
+            bottom: 10%;
+            right: 10%;
+        }
+
+        .p5 {
+            top: 48%;
+            left: 2%;
+        }
+
+        .p6 {
+            top: 45%;
+            right: 2%;
+        }
+
+        .p7 {
+            top: 12%;
+            right: 35%;
+        }
+
+        .p8 {
+            bottom: 25%;
+            left: 40%;
+        }
+
+        .p9 {
+            top: 65%;
+            right: 25%;
+        }
+
+        .p10 {
+            top: 75%;
+            left: 8%;
+        }
+
+        .p11 {
+            top: 15%;
+            left: 30%;
+        }
+
+        .p12 {
+            bottom: 55%;
+            right: 45%;
+        }
+
+        @media (min-width: 768px) {
+            .p1 {
+                left: 15%;
+            }
+
+            .p2 {
+                right: 10%;
+            }
+
+            .p3 {
+                left: 20%;
+            }
+
+            .p4 {
+                right: 15%;
+            }
+
+            .p5 {
+                left: 5%;
+            }
+
+            .p6 {
+                right: 5%;
+            }
+
+            .p7 {
+                right: 40%;
+            }
+
+            .p8 {
+                left: 45%;
+            }
+
+            .p9 {
+                right: 25%;
+            }
+
+            .p10 {
+                left: 10%;
+            }
+
+            .p11 {
+                left: 40%;
+            }
+
+            .p12 {
+                right: 50%;
+            }
+        }
+    </style>
+</head>
+
+<body class="antialiased">
+
+    <nav id="sticky-header"
+        class="fixed top-0 left-0 right-0 z-50 bg-white/80 backdrop-blur-sm shadow-md transition-all duration-500 transform -translate-y-full">
+        <div class="max-w-6xl mx-auto px-6 py-3 flex justify-between items-center">
+            <h1 class="font-fredoka text-2xl font-bold text-gray-800 tracking-tighter">Pamong 8</h1>
+            <div class="flex items-center space-x-2">
+                <div class="flex space-x-1" aria-hidden="true">
+                    <span
+                        class="bg-blue-500 text-white font-bold text-sm px-2 py-1 rounded-md transform -rotate-6">C</span>
+                    <span
+                        class="bg-pink-500 text-white font-bold text-sm px-2 py-1 rounded-md transform rotate-6">S</span>
+                    <span
+                        class="bg-yellow-500 text-white font-bold text-sm px-2 py-1 rounded-md transform -rotate-3">S</span>
+                </div>
+                <p class="font-poppins text-sm font-semibold text-gray-700 hidden sm:block">Cascading Style Sheets</p>
+            </div>
+        </div>
+    </nav>
+
+    <header class="relative w-full h-screen flex items-center justify-center overflow-hidden hero-bg">
+        <div id="hero-photos-bg" class="absolute inset-0 transition-opacity duration-500">
+            <a href="detail-anggota.html?id=1"><img src="https://placehold.co/150x150/FFC3A0/FFFFFF?text=*"
+                    alt="Foto Anggota 1" class="hero-photo p1 w-24 h-24 rounded-full animate-float animate-scale-in"
+                    style="--start-rotate: -10deg; --end-rotate: 10deg; animation-delay: 0.1s; opacity: 0;"></a>
+            <a href="detail-anggota.html?id=2"><img src="https://placehold.co/150x150/FF677D/FFFFFF?text=*"
+                    alt="Foto Anggota 2" class="hero-photo p2 w-32 h-32 rounded-2xl animate-float animate-scale-in"
+                    style="--start-rotate: 5deg; --end-rotate: -5deg; animation-delay: 0.3s; opacity: 0;"></a>
+            <a href="detail-anggota.html?id=3"><img src="https://placehold.co/150x150/D4A5A5/FFFFFF?text=*"
+                    alt="Foto Anggota 3" class="hero-photo p3 w-28 h-28 rounded-lg animate-float animate-scale-in"
+                    style="--start-rotate: 12deg; --end-rotate: -8deg; animation-delay: 0.5s; opacity: 0;"></a>
+            <a href="detail-anggota.html?id=4"><img src="https://placehold.co/150x150/392F5A/FFFFFF?text=*"
+                    alt="Foto Anggota 4" class="hero-photo p4 w-36 h-36 rounded-full animate-float animate-scale-in"
+                    style="--start-rotate: -6deg; --end-rotate: 4deg; animation-delay: 0.2s; opacity: 0;"></a>
+            <a href="detail-anggota.html?id=5"><img src="https://placehold.co/150x150/9DD9D2/FFFFFF?text=*"
+                    alt="Foto Anggota 5" class="hero-photo p5 w-20 h-20 rounded-xl animate-float animate-scale-in"
+                    style="--start-rotate: 15deg; --end-rotate: -15deg; animation-delay: 0.6s; opacity: 0;"></a>
+            <a href="detail-anggota.html?id=6"><img src="https://placehold.co/150x150/F9B4AB/FFFFFF?text=*"
+                    alt="Foto Anggota 6" class="hero-photo p6 w-24 h-24 rounded-full animate-float animate-scale-in"
+                    style="--start-rotate: -12deg; --end-rotate: 12deg; animation-delay: 0.4s; opacity: 0;"></a>
+            <a href="detail-anggota.html?id=7"><img src="https://placehold.co/150x150/2E4057/FFFFFF?text=*"
+                    alt="Foto Anggota 7" class="hero-photo p7 w-28 h-28 rounded-2xl animate-float animate-scale-in"
+                    style="--start-rotate: 8deg; --end-rotate: -10deg; animation-delay: 0.7s; opacity: 0;"></a>
+            <a href="detail-anggota.html?id=8"><img src="https://placehold.co/150x150/E59866/FFFFFF?text=*"
+                    alt="Foto Anggota 8" class="hero-photo p8 w-20 h-20 rounded-full animate-float animate-scale-in"
+                    style="--start-rotate: -5deg; --end-rotate: 15deg; animation-delay: 0.1s; opacity: 0;"></a>
+            <a href="detail-anggota.html?id=9"><img src="https://placehold.co/150x150/5D6D7E/FFFFFF?text=*"
+                    alt="Foto Anggota 9" class="hero-photo p9 w-32 h-32 rounded-lg animate-float animate-scale-in"
+                    style="--start-rotate: 10deg; --end-rotate: -5deg; animation-delay: 0.8s; opacity: 0;"></a>
+            <a href="detail-anggota.html?id=10"><img src="https://placehold.co/150x150/45B39D/FFFFFF?text=*"
+                    alt="Foto Anggota 10" class="hero-photo p10 w-24 h-24 rounded-2xl animate-float animate-scale-in"
+                    style="--start-rotate: -8deg; --end-rotate: 6deg; animation-delay: 0.3s; opacity: 0;"></a>
+            <a href="detail-anggota.html?id=11"><img src="https://placehold.co/150x150/AFFF33/000000?text=*"
+                    alt="Foto Anggota 11" class="hero-photo p11 w-20 h-20 rounded-full animate-float animate-scale-in"
+                    style="--start-rotate: 18deg; --end-rotate: -12deg; animation-delay: 0.5s; opacity: 0;"></a>
+            <a href="detail-anggota.html?id=12"><img src="https://placehold.co/150x150/BDC3C7/FFFFFF?text=*"
+                    alt="Foto Anggota 12" class="hero-photo p12 w-28 h-28 rounded-xl animate-float animate-scale-in"
+                    style="--start-rotate: -15deg; --end-rotate: 15deg; animation-delay: 0.2s; opacity: 0;"></a>
+        </div>
+
+        <div id="hero-text" class="relative z-10 text-center px-4 transition-opacity duration-500">
+            <h1 class="font-fredoka text-6xl md:text-9xl font-bold text-white tracking-tighter animate-fade-in-up"
+                style="text-shadow: 4px 4px 0px rgba(0,0,0,0.2); animation-delay: 0.5s; opacity: 0;">
+                Pamong 8
+            </h1>
+            <p class="mt-4 font-poppins text-lg md:text-2xl text-white font-semibold animate-fade-in-up"
+                style="animation-delay: 0.8s; opacity: 0;">Kenalan Yuk! Sama Pamong CSS!</p>
+        </div>
+    </header>
+
+    <main class="py-24 px-6 md:px-12 relative z-20 main-bg-gradient overflow-hidden">
+        <div class="deco-blob w-80 h-80 bg-pink-400 rounded-full -top-20 -left-20"></div>
+        <div class="deco-blob w-96 h-96 bg-blue-400 rounded-full top-[25%] -right-40"></div>
+        <div class="deco-blob w-72 h-72 bg-yellow-400 rounded-full bottom-[20%] -left-32"></div>
+        <div class="deco-blob w-60 h-60 bg-indigo-400 rounded-full -bottom-20 right-10"></div>
+
+        <div class="max-w-6xl mx-auto space-y-40 md:space-y-24 relative z-10">
+
+            <section class="grid grid-cols-1 md:grid-cols-2 gap-x-12 items-center">
+                <div class="card order-last md:order-first -mt-20 md:mt-0 pt-28 md:pt-10" data-aos="fade-up"
+                    data-aos-offset="200">
+                    <h2 class="font-fredoka text-4xl font-bold text-gray-800">Bisma Hian Saputra</h2>
+                    <div class="mt-6 space-y-4 text-gray-700">
+                        <div class="flex items-start"><svg xmlns="http://www.w3.org/2000/svg"
+                                class="h-6 w-6 mr-4 mt-1 text-pink-500 shrink-0" fill="none" viewBox="0 0 24 24"
+                                stroke="currentColor" stroke-width="2">
+                                <path stroke-linecap="round" stroke-linejoin="round"
+                                    d="M21 15.546c-.523 0-1.046.151-1.5.454a2.704 2.704 0 01-3 0 2.704 2.704 0 00-3 0 2.704 2.704 0 01-3 0 2.704 2.704 0 00-3 0c-.454-.303-.977-.454-1.5-.454V18c0 1.657 1.343 3 3 3h12c1.657 0 3-1.343 3-3v-2.454zM12 12c-1.38 0-2.5-1.12-2.5-2.5S10.62 7 12 7s2.5 1.12 2.5 2.5S13.38 12 12 12z" />
+                                <path stroke-linecap="round" stroke-linejoin="round"
+                                    d="M12 3v4M3 3l3.536 3.536M21 3l-3.536 3.536" />
+                            </svg>
+                            <div>
+                                <p class="font-bold">Tempat, Tanggal Lahir</p>
+                                <p class="text-gray-600">Merauke, 05 Mei 2007</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start"><svg xmlns="http://www.w3.org/2000/svg"
+                                class="h-6 w-6 mr-4 mt-1 text-pink-500 shrink-0" fill="none" viewBox="0 0 24 24"
+                                stroke="currentColor" stroke-width="2">
+                                <path d="M12 14l9-5-9-5-9 5 9 5z" />
+                                <path
+                                    d="M12 14l6.16-3.422a12.083 12.083 0 01.665 6.479A11.952 11.952 0 0012 20.055a11.952 11.952 0 00-6.824-2.998 12.078 12.078 0 01.665-6.479L12 14z" />
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M12 14l9-5-9-5-9 5 9 5z" />
+                            </svg>
+                            <div>
+                                <p class="font-bold">Asal Sekolah</p>
+                                <p class="text-gray-600">SMA Negeri 2 Merauke</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start"><svg xmlns="http://www.w3.org/2000/svg"
+                                class="h-6 w-6 mr-4 mt-1 text-pink-500 shrink-0" fill="none" viewBox="0 0 24 24"
+                                stroke="currentColor" stroke-width="2">
+                                <path stroke-linecap="round" stroke-linejoin="round"
+                                    d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" />
+                            </svg>
+                            <div>
+                                <p class="font-bold">Hobi</p>
+                                <p class="text-gray-600">Menggambar</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="mt-6 border-t-2 border-dashed border-gray-300 pt-5">
+                        <p class="font-bold text-gray-800 flex items-center"><svg xmlns="http://www.w3.org/2000/svg"
+                                class="h-5 w-5 mr-2 text-pink-500" viewBox="0 0 20 20" fill="currentColor">
+                                <path fill-rule="evenodd"
+                                    d="M9.243 3.03a1 1 0 01.757 1.659l-4.5 4.5a1 1 0 01-1.414 0l-2.25-2.25a1 1 0 111.414-1.414l1.543 1.543 3.75-3.75a1 1 0 01.66-.243zM15.75 3a1 1 0 00-1 1v11a1 1 0 102 0V4a1 1 0 00-1-1z"
+                                    clip-rule="evenodd" />
+                            </svg>Motto Hidup</p>
+                        <p class="text-gray-600 italic mt-2">"Uang bukan segalanya, tapi segalanya butuh uang."</p>
+                    </div>
+                </div>
+                <div class="order-first md:order-last px-8 md:px-0" data-aos="fade-up" data-aos-offset="200"><a
+                        href="detail-anggota.html?id=1"><img src="bisma.jpg" alt="Foto Anggota 1"
+                            class="w-full h-auto rounded-3xl photo-frame transform md:-rotate-3"></a></div>
+            </section>
+
+            <section class="grid grid-cols-1 md:grid-cols-2 gap-x-12 items-center">
+                <div class="card order-last md:order-last -mt-20 md:mt-0 pt-28 md:pt-10" data-aos="fade-up"
+                    data-aos-offset="200">
+                    <h2 class="font-fredoka text-4xl font-bold text-gray-800">Arza Dea Lovita</h2>
+                    <div class="mt-6 space-y-4 text-gray-700">
+                        <div class="flex items-start"><svg xmlns="http://www.w3.org/2000/svg"
+                                class="h-6 w-6 mr-4 mt-1 text-blue-500 shrink-0" fill="none" viewBox="0 0 24 24"
+                                stroke="currentColor" stroke-width="2">
+                                <path stroke-linecap="round" stroke-linejoin="round"
+                                    d="M21 15.546c-.523 0-1.046.151-1.5.454a2.704 2.704 0 01-3 0 2.704 2.704 0 00-3 0 2.704 2.704 0 01-3 0 2.704 2.704 0 00-3 0c-.454-.303-.977-.454-1.5-.454V18c0 1.657 1.343 3 3 3h12c1.657 0 3-1.343 3-3v-2.454zM12 12c-1.38 0-2.5-1.12-2.5-2.5S10.62 7 12 7s2.5 1.12 2.5 2.5S13.38 12 12 12z" />
+                                <path stroke-linecap="round" stroke-linejoin="round"
+                                    d="M12 3v4M3 3l3.536 3.536M21 3l-3.536 3.536" />
+                            </svg>
+                            <div>
+                                <p class="font-bold">Tempat, Tanggal Lahir</p>
+                                <p class="text-gray-600">Merauke, 26 Juni 2007</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start"><svg xmlns="http://www.w3.org/2000/svg"
+                                class="h-6 w-6 mr-4 mt-1 text-blue-500 shrink-0" fill="none" viewBox="0 0 24 24"
+                                stroke="currentColor" stroke-width="2">
+                                <path d="M12 14l9-5-9-5-9 5 9 5z" />
+                                <path
+                                    d="M12 14l6.16-3.422a12.083 12.083 0 01.665 6.479A11.952 11.952 0 0012 20.055a11.952 11.952 0 00-6.824-2.998 12.078 12.078 0 01.665-6.479L12 14z" />
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M12 14l9-5-9-5-9 5 9 5z" />
+                            </svg>
+                            <div>
+                                <p class="font-bold">Asal Sekolah</p>
+                                <p class="text-gray-600">MA DDI Al-Munawwaroh Merauke</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start"><svg xmlns="http://www.w3.org/2000/svg"
+                                class="h-6 w-6 mr-4 mt-1 text-blue-500 shrink-0" fill="none" viewBox="0 0 24 24"
+                                stroke="currentColor" stroke-width="2">
+                                <path stroke-linecap="round" stroke-linejoin="round"
+                                    d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" />
+                            </svg>
+                            <div>
+                                <p class="font-bold">Hobi</p>
+                                <p class="text-gray-600">Menulis</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="mt-6 border-t-2 border-dashed border-gray-300 pt-5">
+                        <p class="font-bold text-gray-800 flex items-center"><svg xmlns="http://www.w3.org/2000/svg"
+                                class="h-5 w-5 mr-2 text-blue-500" viewBox="0 0 20 20" fill="currentColor">
+                                <path fill-rule="evenodd"
+                                    d="M9.243 3.03a1 1 0 01.757 1.659l-4.5 4.5a1 1 0 01-1.414 0l-2.25-2.25a1 1 0 111.414-1.414l1.543 1.543 3.75-3.75a1 1 0 01.66-.243zM15.75 3a1 1 0 00-1 1v11a1 1 0 102 0V4a1 1 0 00-1-1z"
+                                    clip-rule="evenodd" />
+                            </svg>Motto Hidup</p>
+                        <p class="text-gray-600 italic mt-2">"Seburuk apapun keadaanmu, jangan pernah melupakan
+                            Tuhanmu."</p>
+                    </div>
+                </div>
+                <div class="order-first md:order-first px-8 md:px-0" data-aos="fade-up" data-aos-offset="200"><a
+                        href="detail-anggota.html?id=2"><img src="arza.jpg" alt="Foto Anggota 2"
+                            class="w-full h-auto rounded-3xl photo-frame transform md:rotate-3"></a></div>
+            </section>
+
+            <section class="grid grid-cols-1 md:grid-cols-2 gap-x-12 items-center">
+                <div class="card order-last md:order-first -mt-20 md:mt-0 pt-28 md:pt-10" data-aos="fade-up"
+                    data-aos-offset="200">
+                    <h2 class="font-fredoka text-4xl font-bold text-gray-800">Fabianus Ankod Renyaan</h2>
+                    <div class="mt-6 space-y-4 text-gray-700">
+                        <div class="flex items-start"><svg xmlns="http://www.w3.org/2000/svg"
+                                class="h-6 w-6 mr-4 mt-1 text-green-500 shrink-0" fill="none" viewBox="0 0 24 24"
+                                stroke="currentColor" stroke-width="2">
+                                <path stroke-linecap="round" stroke-linejoin="round"
+                                    d="M21 15.546c-.523 0-1.046.151-1.5.454a2.704 2.704 0 01-3 0 2.704 2.704 0 00-3 0 2.704 2.704 0 01-3 0 2.704 2.704 0 00-3 0c-.454-.303-.977-.454-1.5-.454V18c0 1.657 1.343 3 3 3h12c1.657 0 3-1.343 3-3v-2.454zM12 12c-1.38 0-2.5-1.12-2.5-2.5S10.62 7 12 7s2.5 1.12 2.5 2.5S13.38 12 12 12z" />
+                                <path stroke-linecap="round" stroke-linejoin="round"
+                                    d="M12 3v4M3 3l3.536 3.536M21 3l-3.536 3.536" />
+                            </svg>
+                            <div>
+                                <p class="font-bold">Tempat, Tanggal Lahir</p>
+                                <p class="text-gray-600">Langgur, 30 Mei 2002</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start"><svg xmlns="http://www.w3.org/2000/svg"
+                                class="h-6 w-6 mr-4 mt-1 text-green-500 shrink-0" fill="none" viewBox="0 0 24 24"
+                                stroke="currentColor" stroke-width="2">
+                                <path d="M12 14l9-5-9-5-9 5 9 5z" />
+                                <path
+                                    d="M12 14l6.16-3.422a12.083 12.083 0 01.665 6.479A11.952 11.952 0 0012 20.055a11.952 11.952 0 00-6.824-2.998 12.078 12.078 0 01.665-6.479L12 14z" />
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M12 14l9-5-9-5-9 5 9 5z" />
+                            </svg>
+                            <div>
+                                <p class="font-bold">Asal Sekolah</p>
+                                <p class="text-gray-600">SMK Siwa Lima ST Yoseph Langgur</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start"><svg xmlns="http://www.w3.org/2000/svg"
+                                class="h-6 w-6 mr-4 mt-1 text-green-500 shrink-0" fill="none" viewBox="0 0 24 24"
+                                stroke="currentColor" stroke-width="2">
+                                <path stroke-linecap="round" stroke-linejoin="round"
+                                    d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" />
+                            </svg>
+                            <div>
+                                <p class="font-bold">Hobi</p>
+                                <p class="text-gray-600">Bermain Bola Kaki</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="mt-6 border-t-2 border-dashed border-gray-300 pt-5">
+                        <p class="font-bold text-gray-800 flex items-center"><svg xmlns="http://www.w3.org/2000/svg"
+                                class="h-5 w-5 mr-2 text-green-500" viewBox="0 0 20 20" fill="currentColor">
+                                <path fill-rule="evenodd"
+                                    d="M9.243 3.03a1 1 0 01.757 1.659l-4.5 4.5a1 1 0 01-1.414 0l-2.25-2.25a1 1 0 111.414-1.414l1.543 1.543 3.75-3.75a1 1 0 01.66-.243zM15.75 3a1 1 0 00-1 1v11a1 1 0 102 0V4a1 1 0 00-1-1z"
+                                    clip-rule="evenodd" />
+                            </svg>Motto Hidup</p>
+                        <p class="text-gray-600 italic mt-2">"Bermimpi besar, bekerja keras."</p>
+                    </div>
+                </div>
+                <div class="order-first md:order-last px-8 md:px-0" data-aos="fade-up" data-aos-offset="200"><a
+                        href="detail-anggota.html?id=3"><img src="fabi.jpg" alt="Foto Anggota 3"
+                            class="w-full h-auto rounded-3xl photo-frame transform md:-rotate-2"></a></div>
+            </section>
+
+            <section class="grid grid-cols-1 md:grid-cols-2 gap-x-12 items-center">
+                <div class="card order-last md:order-last -mt-20 md:mt-0 pt-28 md:pt-10" data-aos="fade-up"
+                    data-aos-offset="200">
+                    <h2 class="font-fredoka text-4xl font-bold text-gray-800">Alifah Windy Khairiya</h2>
+                    <div class="mt-6 space-y-4 text-gray-700">
+                        <div class="flex items-start"><svg xmlns="http://www.w3.org/2000/svg"
+                                class="h-6 w-6 mr-4 mt-1 text-purple-500 shrink-0" fill="none" viewBox="0 0 24 24"
+                                stroke="currentColor" stroke-width="2">
+                                <path stroke-linecap="round" stroke-linejoin="round"
+                                    d="M21 15.546c-.523 0-1.046.151-1.5.454a2.704 2.704 0 01-3 0 2.704 2.704 0 00-3 0 2.704 2.704 0 01-3 0 2.704 2.704 0 00-3 0c-.454-.303-.977-.454-1.5-.454V18c0 1.657 1.343 3 3 3h12c1.657 0 3-1.343 3-3v-2.454zM12 12c-1.38 0-2.5-1.12-2.5-2.5S10.62 7 12 7s2.5 1.12 2.5 2.5S13.38 12 12 12z" />
+                                <path stroke-linecap="round" stroke-linejoin="round"
+                                    d="M12 3v4M3 3l3.536 3.536M21 3l-3.536 3.536" />
+                            </svg>
+                            <div>
+                                <p class="font-bold">Tempat, Tanggal Lahir</p>
+                                <p class="text-gray-600">Merauke, 27 Agustus 2007</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start"><svg xmlns="http://www.w3.org/2000/svg"
+                                class="h-6 w-6 mr-4 mt-1 text-purple-500 shrink-0" fill="none" viewBox="0 0 24 24"
+                                stroke="currentColor" stroke-width="2">
+                                <path d="M12 14l9-5-9-5-9 5 9 5z" />
+                                <path
+                                    d="M12 14l6.16-3.422a12.083 12.083 0 01.665 6.479A11.952 11.952 0 0012 20.055a11.952 11.952 0 00-6.824-2.998 12.078 12.078 0 01.665-6.479L12 14z" />
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M12 14l9-5-9-5-9 5 9 5z" />
+                            </svg>
+                            <div>
+                                <p class="font-bold">Asal Sekolah</p>
+                                <p class="text-gray-600">SMA Negeri 3 Merauke</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start"><svg xmlns="http://www.w3.org/2000/svg"
+                                class="h-6 w-6 mr-4 mt-1 text-purple-500 shrink-0" fill="none" viewBox="0 0 24 24"
+                                stroke="currentColor" stroke-width="2">
+                                <path stroke-linecap="round" stroke-linejoin="round"
+                                    d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" />
+                            </svg>
+                            <div>
+                                <p class="font-bold">Hobi</p>
+                                <p class="text-gray-600">Nonton</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="mt-6 border-t-2 border-dashed border-gray-300 pt-5">
+                        <p class="font-bold text-gray-800 flex items-center"><svg xmlns="http://www.w3.org/2000/svg"
+                                class="h-5 w-5 mr-2 text-purple-500" viewBox="0 0 20 20" fill="currentColor">
+                                <path fill-rule="evenodd"
+                                    d="M9.243 3.03a1 1 0 01.757 1.659l-4.5 4.5a1 1 0 01-1.414 0l-2.25-2.25a1 1 0 111.414-1.414l1.543 1.543 3.75-3.75a1 1 0 01.66-.243zM15.75 3a1 1 0 00-1 1v11a1 1 0 102 0V4a1 1 0 00-1-1z"
+                                    clip-rule="evenodd" />
+                            </svg>Motto Hidup</p>
+                        <p class="text-gray-600 italic mt-2">"Jangan berhenti ketika lelah, tapi berhenti jika tujuanmu
+                            sudah tercapai."</p>
+                    </div>
+                </div>
+                <div class="order-first md:order-first px-8 md:px-0" data-aos="fade-up" data-aos-offset="200"><a
+                        href="detail-anggota.html?id=4"><img src="alifah.jpg" alt="Foto Anggota 4"
+                            class="w-full h-auto rounded-3xl photo-frame transform md:rotate-2"></a></div>
+            </section>
+
+            <section class="grid grid-cols-1 md:grid-cols-2 gap-x-12 items-center">
+                <div class="card order-last md:order-first -mt-20 md:mt-0 pt-28 md:pt-10" data-aos="fade-up"
+                    data-aos-offset="200">
+                    <h2 class="font-fredoka text-4xl font-bold text-gray-800">Risky Pratama</h2>
+                    <div class="mt-6 space-y-4 text-gray-700">
+                        <div class="flex items-start"><svg xmlns="http://www.w3.org/2000/svg"
+                                class="h-6 w-6 mr-4 mt-1 text-yellow-500 shrink-0" fill="none" viewBox="0 0 24 24"
+                                stroke="currentColor" stroke-width="2">
+                                <path stroke-linecap="round" stroke-linejoin="round"
+                                    d="M21 15.546c-.523 0-1.046.151-1.5.454a2.704 2.704 0 01-3 0 2.704 2.704 0 00-3 0 2.704 2.704 0 01-3 0 2.704 2.704 0 00-3 0c-.454-.303-.977-.454-1.5-.454V18c0 1.657 1.343 3 3 3h12c1.657 0 3-1.343 3-3v-2.454zM12 12c-1.38 0-2.5-1.12-2.5-2.5S10.62 7 12 7s2.5 1.12 2.5 2.5S13.38 12 12 12z" />
+                                <path stroke-linecap="round" stroke-linejoin="round"
+                                    d="M12 3v4M3 3l3.536 3.536M21 3l-3.536 3.536" />
+                            </svg>
+                            <div>
+                                <p class="font-bold">Tempat, Tanggal Lahir</p>
+                                <p class="text-gray-600">Merauke, 13 Desember 2007</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start"><svg xmlns="http://www.w3.org/2000/svg"
+                                class="h-6 w-6 mr-4 mt-1 text-yellow-500 shrink-0" fill="none" viewBox="0 0 24 24"
+                                stroke="currentColor" stroke-width="2">
+                                <path d="M12 14l9-5-9-5-9 5 9 5z" />
+                                <path
+                                    d="M12 14l6.16-3.422a12.083 12.083 0 01.665 6.479A11.952 11.952 0 0012 20.055a11.952 11.952 0 00-6.824-2.998 12.078 12.078 0 01.665-6.479L12 14z" />
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M12 14l9-5-9-5-9 5 9 5z" />
+                            </svg>
+                            <div>
+                                <p class="font-bold">Asal Sekolah</p>
+                                <p class="text-gray-600">SMA Negeri 2 Merauke</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start"><svg xmlns="http://www.w3.org/2000/svg"
+                                class="h-6 w-6 mr-4 mt-1 text-yellow-500 shrink-0" fill="none" viewBox="0 0 24 24"
+                                stroke="currentColor" stroke-width="2">
+                                <path stroke-linecap="round" stroke-linejoin="round"
+                                    d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" />
+                            </svg>
+                            <div>
+                                <p class="font-bold">Hobi</p>
+                                <p class="text-gray-600">Nonton anime</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="mt-6 border-t-2 border-dashed border-gray-300 pt-5">
+                        <p class="font-bold text-gray-800 flex items-center"><svg xmlns="http://www.w3.org/2000/svg"
+                                class="h-5 w-5 mr-2 text-yellow-500" viewBox="0 0 20 20" fill="currentColor">
+                                <path fill-rule="evenodd"
+                                    d="M9.243 3.03a1 1 0 01.757 1.659l-4.5 4.5a1 1 0 01-1.414 0l-2.25-2.25a1 1 0 111.414-1.414l1.543 1.543 3.75-3.75a1 1 0 01.66-.243zM15.75 3a1 1 0 00-1 1v11a1 1 0 102 0V4a1 1 0 00-1-1z"
+                                    clip-rule="evenodd" />
+                            </svg>Motto Hidup</p>
+                        <p class="text-gray-600 italic mt-2">"Setiap ada kesulitan, selalu ada kemudahan."</p>
+                    </div>
+                </div>
+                <div class="order-first md:order-last px-8 md:px-0" data-aos="fade-up" data-aos-offset="200"><a
+                        href="detail-anggota.html?id=5"><img src="pratama.JPG" alt="Foto Anggota 5"
+                            class="w-full h-auto rounded-3xl photo-frame transform md:-rotate-3"></a></div>
+            </section>
+
+            <section class="grid grid-cols-1 md:grid-cols-2 gap-x-12 items-center">
+                <div class="card order-last md:order-last -mt-20 md:mt-0 pt-28 md:pt-10" data-aos="fade-up"
+                    data-aos-offset="200">
+                    <h2 class="font-fredoka text-4xl font-bold text-gray-800">Pricia Juneth Pelmelay</h2>
+                    <div class="mt-6 space-y-4 text-gray-700">
+                        <div class="flex items-start"><svg xmlns="http://www.w3.org/2000/svg"
+                                class="h-6 w-6 mr-4 mt-1 text-red-500 shrink-0" fill="none" viewBox="0 0 24 24"
+                                stroke="currentColor" stroke-width="2">
+                                <path stroke-linecap="round" stroke-linejoin="round"
+                                    d="M21 15.546c-.523 0-1.046.151-1.5.454a2.704 2.704 0 01-3 0 2.704 2.704 0 00-3 0 2.704 2.704 0 01-3 0 2.704 2.704 0 00-3 0c-.454-.303-.977-.454-1.5-.454V18c0 1.657 1.343 3 3 3h12c1.657 0 3-1.343 3-3v-2.454zM12 12c-1.38 0-2.5-1.12-2.5-2.5S10.62 7 12 7s2.5 1.12 2.5 2.5S13.38 12 12 12z" />
+                                <path stroke-linecap="round" stroke-linejoin="round"
+                                    d="M12 3v4M3 3l3.536 3.536M21 3l-3.536 3.536" />
+                            </svg>
+                            <div>
+                                <p class="font-bold">Tempat, Tanggal Lahir</p>
+                                <p class="text-gray-600">Merauke, 26 Juni 2008</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start"><svg xmlns="http://www.w3.org/2000/svg"
+                                class="h-6 w-6 mr-4 mt-1 text-red-500 shrink-0" fill="none" viewBox="0 0 24 24"
+                                stroke="currentColor" stroke-width="2">
+                                <path d="M12 14l9-5-9-5-9 5 9 5z" />
+                                <path
+                                    d="M12 14l6.16-3.422a12.083 12.083 0 01.665 6.479A11.952 11.952 0 0012 20.055a11.952 11.952 0 00-6.824-2.998 12.078 12.078 0 01.665-6.479L12 14z" />
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M12 14l9-5-9-5-9 5 9 5z" />
+                            </svg>
+                            <div>
+                                <p class="font-bold">Asal Sekolah</p>
+                                <p class="text-gray-600">SMA YPK MERAUKE</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start"><svg xmlns="http://www.w3.org/2000/svg"
+                                class="h-6 w-6 mr-4 mt-1 text-red-500 shrink-0" fill="none" viewBox="0 0 24 24"
+                                stroke="currentColor" stroke-width="2">
+                                <path stroke-linecap="round" stroke-linejoin="round"
+                                    d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" />
+                            </svg>
+                            <div>
+                                <p class="font-bold">Hobi</p>
+                                <p class="text-gray-600">Reading a romantic novel</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="mt-6 border-t-2 border-dashed border-gray-300 pt-5">
+                        <p class="font-bold text-gray-800 flex items-center"><svg xmlns="http://www.w3.org/2000/svg"
+                                class="h-5 w-5 mr-2 text-red-500" viewBox="0 0 20 20" fill="currentColor">
+                                <path fill-rule="evenodd"
+                                    d="M9.243 3.03a1 1 0 01.757 1.659l-4.5 4.5a1 1 0 01-1.414 0l-2.25-2.25a1 1 0 111.414-1.414l1.543 1.543 3.75-3.75a1 1 0 01.66-.243zM15.75 3a1 1 0 00-1 1v11a1 1 0 102 0V4a1 1 0 00-1-1z"
+                                    clip-rule="evenodd" />
+                            </svg>Motto Hidup</p>
+                        <p class="text-gray-600 italic mt-2">"Tidak ada yang namanya kebetulan, kesempatan datang
+                            karena diciptakan."</p>
+                    </div>
+                </div>
+                <div class="order-first md:order-first px-8 md:px-0" data-aos="fade-up" data-aos-offset="200"><a
+                        href="detail-anggota.html?id=6"><img src="Cia.jpg" alt="Foto Anggota 6"
+                            class="w-full h-auto rounded-3xl photo-frame transform md:rotate-3"></a></div>
+            </section>
+
+            <section class="grid grid-cols-1 md:grid-cols-2 gap-x-12 items-center">
+                <div class="card order-last md:order-first -mt-20 md:mt-0 pt-28 md:pt-10" data-aos="fade-up"
+                    data-aos-offset="200">
+                    <h2 class="font-fredoka text-4xl font-bold text-gray-800">Johanes Albert Daniel Rumaketty</h2>
+                    <div class="mt-6 space-y-4 text-gray-700">
+                        <div class="flex items-start"><svg xmlns="http://www.w3.org/2000/svg"
+                                class="h-6 w-6 mr-4 mt-1 text-teal-500 shrink-0" fill="none" viewBox="0 0 24 24"
+                                stroke="currentColor" stroke-width="2">
+                                <path stroke-linecap="round" stroke-linejoin="round"
+                                    d="M21 15.546c-.523 0-1.046.151-1.5.454a2.704 2.704 0 01-3 0 2.704 2.704 0 00-3 0 2.704 2.704 0 01-3 0 2.704 2.704 0 00-3 0c-.454-.303-.977-.454-1.5-.454V18c0 1.657 1.343 3 3 3h12c1.657 0 3-1.343 3-3v-2.454zM12 12c-1.38 0-2.5-1.12-2.5-2.5S10.62 7 12 7s2.5 1.12 2.5 2.5S13.38 12 12 12z" />
+                                <path stroke-linecap="round" stroke-linejoin="round"
+                                    d="M12 3v4M3 3l3.536 3.536M21 3l-3.536 3.536" />
+                            </svg>
+                            <div>
+                                <p class="font-bold">Tempat, Tanggal Lahir</p>
+                                <p class="text-gray-600">Merauke, 28 Mei 2007</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start"><svg xmlns="http://www.w3.org/2000/svg"
+                                class="h-6 w-6 mr-4 mt-1 text-teal-500 shrink-0" fill="none" viewBox="0 0 24 24"
+                                stroke="currentColor" stroke-width="2">
+                                <path d="M12 14l9-5-9-5-9 5 9 5z" />
+                                <path
+                                    d="M12 14l6.16-3.422a12.083 12.083 0 01.665 6.479A11.952 11.952 0 0012 20.055a11.952 11.952 0 00-6.824-2.998 12.078 12.078 0 01.665-6.479L12 14z" />
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M12 14l9-5-9-5-9 5 9 5z" />
+                            </svg>
+                            <div>
+                                <p class="font-bold">Asal Sekolah</p>
+                                <p class="text-gray-600">SMK Negeri 3 Merauke</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start"><svg xmlns="http://www.w3.org/2000/svg"
+                                class="h-6 w-6 mr-4 mt-1 text-teal-500 shrink-0" fill="none" viewBox="0 0 24 24"
+                                stroke="currentColor" stroke-width="2">
+                                <path stroke-linecap="round" stroke-linejoin="round"
+                                    d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" />
+                            </svg>
+                            <div>
+                                <p class="font-bold">Hobi</p>
+                                <p class="text-gray-600">Bermain basket</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="mt-6 border-t-2 border-dashed border-gray-300 pt-5">
+                        <p class="font-bold text-gray-800 flex items-center"><svg xmlns="http://www.w3.org/2000/svg"
+                                class="h-5 w-5 mr-2 text-teal-500" viewBox="0 0 20 20" fill="currentColor">
+                                <path fill-rule="evenodd"
+                                    d="M9.243 3.03a1 1 0 01.757 1.659l-4.5 4.5a1 1 0 01-1.414 0l-2.25-2.25a1 1 0 111.414-1.414l1.543 1.543 3.75-3.75a1 1 0 01.66-.243zM15.75 3a1 1 0 00-1 1v11a1 1 0 102 0V4a1 1 0 00-1-1z"
+                                    clip-rule="evenodd" />
+                            </svg>Motto Hidup</p>
+                        <p class="text-gray-600 italic mt-2">"Menghargai jika mau dihargai."</p>
+                    </div>
+                </div>
+                <div class="order-first md:order-last px-8 md:px-0" data-aos="fade-up" data-aos-offset="200"><a
+                        href="detail-anggota.html?id=7"><img src="johanes.jpg" alt="Foto Anggota 7"
+                            class="w-full h-auto rounded-3xl photo-frame transform md:-rotate-2"></a></div>
+            </section>
+
+            <section class="grid grid-cols-1 md:grid-cols-2 gap-x-12 items-center">
+                <div class="card order-last md:order-last -mt-20 md:mt-0 pt-28 md:pt-10" data-aos="fade-up"
+                    data-aos-offset="200">
+                    <h2 class="font-fredoka text-4xl font-bold text-gray-800">Zhafira</h2>
+                    <div class="mt-6 space-y-4 text-gray-700">
+                        <div class="flex items-start"><svg xmlns="http://www.w3.org/2000/svg"
+                                class="h-6 w-6 mr-4 mt-1 text-orange-500 shrink-0" fill="none" viewBox="0 0 24 24"
+                                stroke="currentColor" stroke-width="2">
+                                <path stroke-linecap="round" stroke-linejoin="round"
+                                    d="M21 15.546c-.523 0-1.046.151-1.5.454a2.704 2.704 0 01-3 0 2.704 2.704 0 00-3 0 2.704 2.704 0 01-3 0 2.704 2.704 0 00-3 0c-.454-.303-.977-.454-1.5-.454V18c0 1.657 1.343 3 3 3h12c1.657 0 3-1.343 3-3v-2.454zM12 12c-1.38 0-2.5-1.12-2.5-2.5S10.62 7 12 7s2.5 1.12 2.5 2.5S13.38 12 12 12z" />
+                                <path stroke-linecap="round" stroke-linejoin="round"
+                                    d="M12 3v4M3 3l3.536 3.536M21 3l-3.536 3.536" />
+                            </svg>
+                            <div>
+                                <p class="font-bold">Tempat, Tanggal Lahir</p>
+                                <p class="text-gray-600">Merauke, 11 Maret 2007</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start"><svg xmlns="http://www.w3.org/2000/svg"
+                                class="h-6 w-6 mr-4 mt-1 text-orange-500 shrink-0" fill="none" viewBox="0 0 24 24"
+                                stroke="currentColor" stroke-width="2">
+                                <path d="M12 14l9-5-9-5-9 5 9 5z" />
+                                <path
+                                    d="M12 14l6.16-3.422a12.083 12.083 0 01.665 6.479A11.952 11.952 0 0012 20.055a11.952 11.952 0 00-6.824-2.998 12.078 12.078 0 01.665-6.479L12 14z" />
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M12 14l9-5-9-5-9 5 9 5z" />
+                            </svg>
+                            <div>
+                                <p class="font-bold">Asal Sekolah</p>
+                                <p class="text-gray-600">SMA Negeri 1 Kurik</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start"><svg xmlns="http://www.w3.org/2000/svg"
+                                class="h-6 w-6 mr-4 mt-1 text-orange-500 shrink-0" fill="none" viewBox="0 0 24 24"
+                                stroke="currentColor" stroke-width="2">
+                                <path stroke-linecap="round" stroke-linejoin="round"
+                                    d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" />
+                            </svg>
+                            <div>
+                                <p class="font-bold">Hobi</p>
+                                <p class="text-gray-600">Traveling</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="mt-6 border-t-2 border-dashed border-gray-300 pt-5">
+                        <p class="font-bold text-gray-800 flex items-center"><svg xmlns="http://www.w3.org/2000/svg"
+                                class="h-5 w-5 mr-2 text-orange-500" viewBox="0 0 20 20" fill="currentColor">
+                                <path fill-rule="evenodd"
+                                    d="M9.243 3.03a1 1 0 01.757 1.659l-4.5 4.5a1 1 0 01-1.414 0l-2.25-2.25a1 1 0 111.414-1.414l1.543 1.543 3.75-3.75a1 1 0 01.66-.243zM15.75 3a1 1 0 00-1 1v11a1 1 0 102 0V4a1 1 0 00-1-1z"
+                                    clip-rule="evenodd" />
+                            </svg>Motto Hidup</p>
+                        <p class="text-gray-600 italic mt-2">"Kesuksesan datang dari keberanian untuk memulai."</p>
+                    </div>
+                </div>
+                <div class="order-first md:order-first px-8 md:px-0" data-aos="fade-up" data-aos-offset="200"><a
+                        href="detail-anggota.html?id=8"><img src="fira.jpg" alt="Foto Anggota 8"
+                            class="w-full h-auto rounded-3xl photo-frame transform md:rotate-2"></a></div>
+            </section>
+
+            <section class="grid grid-cols-1 md:grid-cols-2 gap-x-12 items-center">
+                <div class="card order-last md:order-first -mt-20 md:mt-0 pt-28 md:pt-10" data-aos="fade-up"
+                    data-aos-offset="200">
+                    <h2 class="font-fredoka text-4xl font-bold text-gray-800">Juninho Stiven Tinggui Wopari</h2>
+                    <div class="mt-6 space-y-4 text-gray-700">
+                        <div class="flex items-start"><svg xmlns="http://www.w3.org/2000/svg"
+                                class="h-6 w-6 mr-4 mt-1 text-indigo-500 shrink-0" fill="none" viewBox="0 0 24 24"
+                                stroke="currentColor" stroke-width="2">
+                                <path stroke-linecap="round" stroke-linejoin="round"
+                                    d="M21 15.546c-.523 0-1.046.151-1.5.454a2.704 2.704 0 01-3 0 2.704 2.704 0 00-3 0 2.704 2.704 0 01-3 0 2.704 2.704 0 00-3 0c-.454-.303-.977-.454-1.5-.454V18c0 1.657 1.343 3 3 3h12c1.657 0 3-1.343 3-3v-2.454zM12 12c-1.38 0-2.5-1.12-2.5-2.5S10.62 7 12 7s2.5 1.12 2.5 2.5S13.38 12 12 12z" />
+                                <path stroke-linecap="round" stroke-linejoin="round"
+                                    d="M12 3v4M3 3l3.536 3.536M21 3l-3.536 3.536" />
+                            </svg>
+                            <div>
+                                <p class="font-bold">Tempat, Tanggal Lahir</p>
+                                <p class="text-gray-600">Abepura, 21 September 2007</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start"><svg xmlns="http://www.w3.org/2000/svg"
+                                class="h-6 w-6 mr-4 mt-1 text-indigo-500 shrink-0" fill="none" viewBox="0 0 24 24"
+                                stroke="currentColor" stroke-width="2">
+                                <path d="M12 14l9-5-9-5-9 5 9 5z" />
+                                <path
+                                    d="M12 14l6.16-3.422a12.083 12.083 0 01.665 6.479A11.952 11.952 0 0012 20.055a11.952 11.952 0 00-6.824-2.998 12.078 12.078 0 01.665-6.479L12 14z" />
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M12 14l9-5-9-5-9 5 9 5z" />
+                            </svg>
+                            <div>
+                                <p class="font-bold">Asal Sekolah</p>
+                                <p class="text-gray-600">SMA Negeri 3 Merauke</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start"><svg xmlns="http://www.w3.org/2000/svg"
+                                class="h-6 w-6 mr-4 mt-1 text-indigo-500 shrink-0" fill="none" viewBox="0 0 24 24"
+                                stroke="currentColor" stroke-width="2">
+                                <path stroke-linecap="round" stroke-linejoin="round"
+                                    d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" />
+                            </svg>
+                            <div>
+                                <p class="font-bold">Hobi</p>
+                                <p class="text-gray-600">Bermain basket</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="mt-6 border-t-2 border-dashed border-gray-300 pt-5">
+                        <p class="font-bold text-gray-800 flex items-center"><svg xmlns="http://www.w3.org/2000/svg"
+                                class="h-5 w-5 mr-2 text-indigo-500" viewBox="0 0 20 20" fill="currentColor">
+                                <path fill-rule="evenodd"
+                                    d="M9.243 3.03a1 1 0 01.757 1.659l-4.5 4.5a1 1 0 01-1.414 0l-2.25-2.25a1 1 0 111.414-1.414l1.543 1.543 3.75-3.75a1 1 0 01.66-.243zM15.75 3a1 1 0 00-1 1v11a1 1 0 102 0V4a1 1 0 00-1-1z"
+                                    clip-rule="evenodd" />
+                            </svg>Motto Hidup</p>
+                        <p class="text-gray-600 italic mt-2">"Waktu adalah uang."</p>
+                    </div>
+                </div>
+                <div class="order-first md:order-last px-8 md:px-0" data-aos="fade-up" data-aos-offset="200"><a
+                        href="detail-anggota.html?id=9"><img src="juninho.jpg" alt="Foto Anggota 9"
+                            class="w-full h-auto rounded-3xl photo-frame transform md:-rotate-3"></a></div>
+            </section>
+
+            <section class="grid grid-cols-1 md:grid-cols-2 gap-x-12 items-center">
+                <div class="card order-last md:order-last -mt-20 md:mt-0 pt-28 md:pt-10" data-aos="fade-up"
+                    data-aos-offset="200">
+                    <h2 class="font-fredoka text-4xl font-bold text-gray-800">Novanca Anna Fransisca Tap</h2>
+                    <div class="mt-6 space-y-4 text-gray-700">
+                        <div class="flex items-start"><svg xmlns="http://www.w3.org/2000/svg"
+                                class="h-6 w-6 mr-4 mt-1 text-cyan-500 shrink-0" fill="none" viewBox="0 0 24 24"
+                                stroke="currentColor" stroke-width="2">
+                                <path stroke-linecap="round" stroke-linejoin="round"
+                                    d="M21 15.546c-.523 0-1.046.151-1.5.454a2.704 2.704 0 01-3 0 2.704 2.704 0 00-3 0 2.704 2.704 0 01-3 0 2.704 2.704 0 00-3 0c-.454-.303-.977-.454-1.5-.454V18c0 1.657 1.343 3 3 3h12c1.657 0 3-1.343 3-3v-2.454zM12 12c-1.38 0-2.5-1.12-2.5-2.5S10.62 7 12 7s2.5 1.12 2.5 2.5S13.38 12 12 12z" />
+                                <path stroke-linecap="round" stroke-linejoin="round"
+                                    d="M12 3v4M3 3l3.536 3.536M21 3l-3.536 3.536" />
+                            </svg>
+                            <div>
+                                <p class="font-bold">Tempat, Tanggal Lahir</p>
+                                <p class="text-gray-600">Merauke, 22 September 2006</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start"><svg xmlns="http://www.w3.org/2000/svg"
+                                class="h-6 w-6 mr-4 mt-1 text-cyan-500 shrink-0" fill="none" viewBox="0 0 24 24"
+                                stroke="currentColor" stroke-width="2">
+                                <path d="M12 14l9-5-9-5-9 5 9 5z" />
+                                <path
+                                    d="M12 14l6.16-3.422a12.083 12.083 0 01.665 6.479A11.952 11.952 0 0012 20.055a11.952 11.952 0 00-6.824-2.998 12.078 12.078 0 01.665-6.479L12 14z" />
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M12 14l9-5-9-5-9 5 9 5z" />
+                            </svg>
+                            <div>
+                                <p class="font-bold">Asal Sekolah</p>
+                                <p class="text-gray-600">SMA Negeri 1 Merauke</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start"><svg xmlns="http://www.w3.org/2000/svg"
+                                class="h-6 w-6 mr-4 mt-1 text-cyan-500 shrink-0" fill="none" viewBox="0 0 24 24"
+                                stroke="currentColor" stroke-width="2">
+                                <path stroke-linecap="round" stroke-linejoin="round"
+                                    d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" />
+                            </svg>
+                            <div>
+                                <p class="font-bold">Hobi</p>
+                                <p class="text-gray-600">Dengar musik</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="mt-6 border-t-2 border-dashed border-gray-300 pt-5">
+                        <p class="font-bold text-gray-800 flex items-center"><svg xmlns="http://www.w3.org/2000/svg"
+                                class="h-5 w-5 mr-2 text-cyan-500" viewBox="0 0 20 20" fill="currentColor">
+                                <path fill-rule="evenodd"
+                                    d="M9.243 3.03a1 1 0 01.757 1.659l-4.5 4.5a1 1 0 01-1.414 0l-2.25-2.25a1 1 0 111.414-1.414l1.543 1.543 3.75-3.75a1 1 0 01.66-.243zM15.75 3a1 1 0 00-1 1v11a1 1 0 102 0V4a1 1 0 00-1-1z"
+                                    clip-rule="evenodd" />
+                            </svg>Motto Hidup</p>
+                        <p class="text-gray-600 italic mt-2">"Setiap kesulitan pasti ada kemudahan."</p>
+                    </div>
+                </div>
+                <div class="order-first md:order-first px-8 md:px-0" data-aos="fade-up" data-aos-offset="200"><a
+                        href="detail-anggota.html?id=10"><img src="nova.jpg" alt="Foto Anggota 10"
+                            class="w-full h-auto rounded-3xl photo-frame transform md:rotate-3"></a></div>
+            </section>
+
+            <section class="grid grid-cols-1 md:grid-cols-2 gap-x-12 items-center">
+                <div class="card order-last md:order-first -mt-20 md:mt-0 pt-28 md:pt-10" data-aos="fade-up"
+                    data-aos-offset="200">
+                    <h2 class="font-fredoka text-4xl font-bold text-gray-800">Fransisco Queizal Rossano Waas</h2>
+                    <div class="mt-6 space-y-4 text-gray-700">
+                        <div class="flex items-start"><svg xmlns="http://www.w3.org/2000/svg"
+                                class="h-6 w-6 mr-4 mt-1 text-lime-500 shrink-0" fill="none" viewBox="0 0 24 24"
+                                stroke="currentColor" stroke-width="2">
+                                <path stroke-linecap="round" stroke-linejoin="round"
+                                    d="M21 15.546c-.523 0-1.046.151-1.5.454a2.704 2.704 0 01-3 0 2.704 2.704 0 00-3 0 2.704 2.704 0 01-3 0 2.704 2.704 0 00-3 0c-.454-.303-.977-.454-1.5-.454V18c0 1.657 1.343 3 3 3h12c1.657 0 3-1.343 3-3v-2.454zM12 12c-1.38 0-2.5-1.12-2.5-2.5S10.62 7 12 7s2.5 1.12 2.5 2.5S13.38 12 12 12z" />
+                                <path stroke-linecap="round" stroke-linejoin="round"
+                                    d="M12 3v4M3 3l3.536 3.536M21 3l-3.536 3.536" />
+                            </svg>
+                            <div>
+                                <p class="font-bold">Tempat, Tanggal Lahir</p>
+                                <p class="text-gray-600">Merauke, 20 April 2007</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start"><svg xmlns="http://www.w3.org/2000/svg"
+                                class="h-6 w-6 mr-4 mt-1 text-lime-500 shrink-0" fill="none" viewBox="0 0 24 24"
+                                stroke="currentColor" stroke-width="2">
+                                <path d="M12 14l9-5-9-5-9 5 9 5z" />
+                                <path
+                                    d="M12 14l6.16-3.422a12.083 12.083 0 01.665 6.479A11.952 11.952 0 0012 20.055a11.952 11.952 0 00-6.824-2.998 12.078 12.078 0 01.665-6.479L12 14z" />
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M12 14l9-5-9-5-9 5 9 5z" />
+                            </svg>
+                            <div>
+                                <p class="font-bold">Asal Sekolah</p>
+                                <p class="text-gray-600">SMK Negeri 3 Merauke</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start"><svg xmlns="http://www.w3.org/2000/svg"
+                                class="h-6 w-6 mr-4 mt-1 text-lime-500 shrink-0" fill="none" viewBox="0 0 24 24"
+                                stroke="currentColor" stroke-width="2">
+                                <path stroke-linecap="round" stroke-linejoin="round"
+                                    d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" />
+                            </svg>
+                            <div>
+                                <p class="font-bold">Hobi</p>
+                                <p class="text-gray-600">Basket dan Boxing</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="mt-6 border-t-2 border-dashed border-gray-300 pt-5">
+                        <p class="font-bold text-gray-800 flex items-center"><svg xmlns="http://www.w3.org/2000/svg"
+                                class="h-5 w-5 mr-2 text-lime-500" viewBox="0 0 20 20" fill="currentColor">
+                                <path fill-rule="evenodd"
+                                    d="M9.243 3.03a1 1 0 01.757 1.659l-4.5 4.5a1 1 0 01-1.414 0l-2.25-2.25a1 1 0 111.414-1.414l1.543 1.543 3.75-3.75a1 1 0 01.66-.243zM15.75 3a1 1 0 00-1 1v11a1 1 0 102 0V4a1 1 0 00-1-1z"
+                                    clip-rule="evenodd" />
+                            </svg>Motto Hidup</p>
+                        <p class="text-gray-600 italic mt-2">"Bekerja keras, belajar dan berdoa."</p>
+                    </div>
+                </div>
+                <div class="order-first md:order-last px-8 md:px-0" data-aos="fade-up" data-aos-offset="200"><a
+                        href="detail-anggota.html?id=11"><img src="fransisco.jpg" alt="Foto Anggota 11"
+                            class="w-full h-auto rounded-3xl photo-frame transform md:-rotate-2"></a></div>
+            </section>
+
+            <section class="grid grid-cols-1 md:grid-cols-2 gap-x-12 items-center">
+                <div class="card order-last md:order-last -mt-20 md:mt-0 pt-28 md:pt-10" data-aos="fade-up"
+                    data-aos-offset="200">
+                    <h2 class="font-fredoka text-4xl font-bold text-gray-800">Eva Elze Beatris Erry</h2>
+                    <div class="mt-6 space-y-4 text-gray-700">
+                        <div class="flex items-start"><svg xmlns="http://www.w3.org/2000/svg"
+                                class="h-6 w-6 mr-4 mt-1 text-gray-600 shrink-0" fill="none" viewBox="0 0 24 24"
+                                stroke="currentColor" stroke-width="2">
+                                <path stroke-linecap="round" stroke-linejoin="round"
+                                    d="M21 15.546c-.523 0-1.046.151-1.5.454a2.704 2.704 0 01-3 0 2.704 2.704 0 00-3 0 2.704 2.704 0 01-3 0 2.704 2.704 0 00-3 0c-.454-.303-.977-.454-1.5-.454V18c0 1.657 1.343 3 3 3h12c1.657 0 3-1.343 3-3v-2.454zM12 12c-1.38 0-2.5-1.12-2.5-2.5S10.62 7 12 7s2.5 1.12 2.5 2.5S13.38 12 12 12z" />
+                                <path stroke-linecap="round" stroke-linejoin="round"
+                                    d="M12 3v4M3 3l3.536 3.536M21 3l-3.536 3.536" />
+                            </svg>
+                            <div>
+                                <p class="font-bold">Tempat, Tanggal Lahir</p>
+                                <p class="text-gray-600">Merauke, 08 April 2007</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start"><svg xmlns="http://www.w3.org/2000/svg"
+                                class="h-6 w-6 mr-4 mt-1 text-gray-600 shrink-0" fill="none" viewBox="0 0 24 24"
+                                stroke="currentColor" stroke-width="2">
+                                <path d="M12 14l9-5-9-5-9 5 9 5z" />
+                                <path
+                                    d="M12 14l6.16-3.422a12.083 12.083 0 01.665 6.479A11.952 11.952 0 0012 20.055a11.952 11.952 0 00-6.824-2.998 12.078 12.078 0 01.665-6.479L12 14z" />
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M12 14l9-5-9-5-9 5 9 5z" />
+                            </svg>
+                            <div>
+                                <p class="font-bold">Asal Sekolah</p>
+                                <p class="text-gray-600">SMA Negeri 1 Kurik</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start"><svg xmlns="http://www.w3.org/2000/svg"
+                                class="h-6 w-6 mr-4 mt-1 text-gray-600 shrink-0" fill="none" viewBox="0 0 24 24"
+                                stroke="currentColor" stroke-width="2">
+                                <path stroke-linecap="round" stroke-linejoin="round"
+                                    d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" />
+                            </svg>
+                            <div>
+                                <p class="font-bold">Hobi</p>
+                                <p class="text-gray-600">Membaca</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="mt-6 border-t-2 border-dashed border-gray-300 pt-5">
+                        <p class="font-bold text-gray-800 flex items-center"><svg xmlns="http://www.w3.org/2000/svg"
+                                class="h-5 w-5 mr-2 text-gray-600" viewBox="0 0 20 20" fill="currentColor">
+                                <path fill-rule="evenodd"
+                                    d="M9.243 3.03a1 1 0 01.757 1.659l-4.5 4.5a1 1 0 01-1.414 0l-2.25-2.25a1 1 0 111.414-1.414l1.543 1.543 3.75-3.75a1 1 0 01.66-.243zM15.75 3a1 1 0 00-1 1v11a1 1 0 102 0V4a1 1 0 00-1-1z"
+                                    clip-rule="evenodd" />
+                            </svg>Motto Hidup</p class="text-gray-600 italic mt-2">"Belajar untuk berkembang, perubahan
+                        adalah kunci untuk kesuksesan."</p>
+                    </div>
+                </div>
+                <div class="order-first md:order-first px-8 md:px-0" data-aos="fade-up" data-aos-offset="200"><a
+                        href="detail-anggota.html?id=12"><img src="eva.jpg" alt="Foto Anggota 12"
+                            class="w-full h-auto rounded-3xl photo-frame transform md:rotate-2"></a></div>
+            </section>
+        </div>
+    </main>
+
+    <footer class="bg-gray-800 text-white py-8 text-center">
+        <p class="font-poppins">&copy; 2025 - Dibuat dengan ❤️ oleh Pamong 8.</p>
+    </footer>
+
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <script>
+        AOS.init({
+            duration: 800,
+            once: true,
+            offset: 100,
+        });
+
+        const stickyHeader = document.getElementById('sticky-header');
+        const heroText = document.getElementById('hero-text');
+        const heroPhotos = document.getElementById('hero-photos-bg');
+
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > window.innerHeight * 0.5) {
+                stickyHeader.style.transform = 'translateY(0)';
+                heroText.style.opacity = '0';
+                heroPhotos.style.opacity = '0.5';
+            } else {
+                stickyHeader.style.transform = 'translateY(-100%)';
+                heroText.style.opacity = '1';
+                heroPhotos.style.opacity = '1';
+            }
+        });
+    </script>
+</body>
+
+
+</html>
